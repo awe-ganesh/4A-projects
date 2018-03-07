@@ -8,6 +8,10 @@ void hardcore(int dig)
 {
 	switch(dig)
 	{
+		case 25: printf("%c",48);
+				break;
+		case 26: printf("%c",49);
+				break;
 		case 83 : printf("%c",67);
 				break;
 		case 62 : printf("%c",69);
@@ -126,13 +130,20 @@ void main()
 				//break;	
 			}
 
-			else if((digit>63)&&(digit<71))
+			else if((digit>41)&&(digit<50))
 			{
-				convert = digit - (8*7.78);
+				convert = digit - (8*5.3);
 				conv = ceil(convert);
 				digit = (8*10) + conv;
 				printf("%c",digit);
 				//break;	
+			}
+			else if((digit>30)&&(digit < 39))
+			{
+				convert = digit - (5 * 6.37);
+				conv = ceil(convert);
+				digit = (5*10) + conv;
+				printf("%c",digit);
 			}
 			else
 			{
