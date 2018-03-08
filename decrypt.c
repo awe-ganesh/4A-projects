@@ -4,9 +4,9 @@
 int top = -1;
 int s[MAX];
 
-void hardcore(int dig)
+void mapit(int digit)
 {
-	switch(dig)
+	switch(digit)
 	{
 		case 25: printf("%c",48);
 				break;
@@ -147,7 +147,7 @@ void main()
 			}
 			else
 			{
-				hardcore(digit);
+				mapit(digit);
 			}	
 		}
 		/*if(count == 1)
