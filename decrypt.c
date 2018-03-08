@@ -34,7 +34,6 @@ void mapit(int digit)
 				break;
 		case 32 : printf("%c",79);
 				break; 	
-		
 		case 79 : printf("%c",32);
 				break; 	
 	}		
@@ -80,12 +79,10 @@ void main()
 	fp = fopen("decrypt.txt","r");
 	l1 : while((ch) != EOF)
 	{
-		
 		{
 			ch = fgetc(fp);
 			if(ch == ' ')
 		    	{
-				//push(ch);
 				count=0;
 				num = ch + 47;
 				printf("%c",num);
@@ -97,28 +94,24 @@ void main()
 				push(num);
 				count++;
 			}
-			
 		}
 		if(count == 2)
 		{	
-			/*if(num == 32)
 			{
 				count =0;
 				goto l1;
-			}*/	
+			}	
 			count = 0;
-			//printf("abcd\n");
 			first = pop();
 			second = pop();
-			
 			digit = (second * 10) + first;
+			
 			if((digit>57)&&(digit<62))
 			{
 				convert = digit - (6*8.85);
 				conv = ceil(convert);
 				digit = (6*10) + conv;
-				printf("%c",digit);
-				//break;	 
+				printf("%c",digit);		 
 			}
 			
 			else if((digit>49)&&(digit<57))
@@ -126,17 +119,14 @@ void main()
 				convert = digit - (7*6.97);
 				conv = ceil(convert);
 				digit = (7*10) + conv;
-				printf("%c",digit);
-				//break;	
+				printf("%c",digit);	
 			}
-
 			else if((digit>41)&&(digit<50))
 			{
 				convert = digit - (8*5.3);
 				conv = ceil(convert);
 				digit = (8*10) + conv;
-				printf("%c",digit);
-				//break;	
+				printf("%c",digit);	
 			}
 			else if((digit>30)&&(digit < 39))
 			{
@@ -145,18 +135,9 @@ void main()
 				digit = (5*10) + conv;
 				printf("%c",digit);
 			}
-			else
-			{
-				mapit(digit);
-			}	
+			else	mapit(digit);	
 		}
-		/*if(count == 1)
-		{
-			count = 0;
-			first = pop();
-			printf("%c",79);
-		}*/
-		//l1: printf("%c",79);	
+		
 	}
 }
 
