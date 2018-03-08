@@ -14,10 +14,10 @@ void main()
 		printf("\t\t\tUser\n");
 		multi = (4*n) - 4;	/*Multi will store the value which is a lesser multiple of 4 
 						ie.(4*3)-4 = 8*/
-		first = chocolate - multi;//First will hild the number of chocolates the computer has taken
+		first = chocolate - multi;//First will holds number of chocolates the computer has taken
 		for(i=0;i<n-1;i++)
 		{
-			chocolate = chocolate - first;//It is the remaining number of chocolates
+			chocolate = chocolate - first;// remaining number of chocolates is updated
 			printf("%d",first);
 			printf("\t\t\n");
 			l2 : scanf("\t\t\t\t%d",&number);//User has to enter this field
@@ -28,11 +28,10 @@ void main()
 					goto l2;	
 				}
 			printf("\t\t\t\t%d\n",number);
-			chocolate = chocolate - number; /*Now the chocolate will hold the number of chocolates which is reemaining
-								after the user hass taken*/
-			first = 4 - number; //We assign first, with the number of chocolate sthe computer has to take
+			chocolate = chocolate - number;// remaining chocolates
+			first = 4 - number; //assign 'first' with the number of chocolates the computer has to take
 		}
-			printf("%d",first);
+		  printf("%d",first);
 	}
 	
 	else
