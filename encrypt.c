@@ -8,6 +8,7 @@ int main()
   FILE * fp1,*fp2;
 	fp1 = fopen("mes.txt","r");
   fp2 = fopen("mesEn.txt","w");
+	if(fp1==NULL||fp2==NULL) printf("file not open");
 	char ch;
 	while(fscanf(fp,"%c",&ch)!=EOF)
 	  {
