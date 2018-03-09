@@ -77,6 +77,7 @@ void main()
 	
 	FILE * fp;
 	fp = fopen("decrypt.txt","r");
+	if(fp==NULL) printf("file not open");
 	l1 : while((ch) != EOF)
 	{
 		{
