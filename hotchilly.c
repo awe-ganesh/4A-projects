@@ -1,4 +1,25 @@
 #include<stdio.h>
+#include<conio.h>
+int takein()
+{
+            char ch;int a;
+    		while(1)
+				{
+				    //scanf("%c",&ch);
+				    printf("HAHA\n");
+				    ch = getch();
+				    printf("%c",ch);
+				    a = ch- '0';
+				    printf("%d",a);
+				    if(a != 1 ||a != 2 ||a != 3)
+				    {
+				    printf("You can enter either 1 or 2 or maximum 3\n");
+					printf("Take again\n");
+					continue;
+				    }
+				    return a;
+			}	
+}
 void main()
 {
 	int chocolate,i,n=1,first,multi,number,l1,l2;
@@ -20,14 +41,7 @@ void main()
 			chocolate = chocolate - first;// remaining number of chocolates is updated
 			printf("%d",first);
 			printf("\t\t\n");
-			l2 : scanf("\t\t\t\t%d",&number);//User has to enter this field
-			if(number >3)//This will check that the user will always give within the limits of 1, 2and 3
-				{
-					printf("You can enter either 1 or 2 or maximum 3\n");
-					printf("Take again\n");
-					goto l2;	
-				}
-			printf("\t\t\t\t%d\n",number);
+			number = takein();
 			chocolate = chocolate - number;// remaining chocolates
 			first = 4 - number; //assign 'first' with the number of chocolates the computer has to take
 		}
@@ -42,13 +56,7 @@ void main()
 		for(i=0;i<n;i++)
 			{
 				
-				l1 : scanf("\t\t\t\t\t%d",&number);
-				if(number >3)
-				{
-					printf("You can enter either 1 or 2 or maximum 3\n");
-					printf("Take again\n");
-					goto l1;	
-				}
+				number = takein();
 				chocolate = chocolate - number;
 				printf("\t\t\t\t%d",number);
 				printf("\t\t\n");	
