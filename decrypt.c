@@ -97,10 +97,10 @@ void main()
 		}
 		if(count == 2)
 		{	
-			{
-				count =0;
-				goto l1;
-			}	
+			
+				
+				
+				
 			count = 0;
 			first = pop();
 			second = pop();
