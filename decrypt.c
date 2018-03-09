@@ -117,21 +117,21 @@ void main()
 			else if((digit>49)&&(digit<57))
 			{
 				convert = digit - (7*6.97);
-				conv = ceil(convert);
+				conv = (int)ceil(convert);
 				digit = (7*10) + conv;
 				printf("%c",digit);	
 			}
 			else if((digit>41)&&(digit<50))
 			{
 				convert = digit - (8*5.3);
-				conv = ceil(convert);
+				conv = (int)ceil(convert);
 				digit = (8*10) + conv;
 				printf("%c",digit);	
 			}
 			else if((digit>30)&&(digit < 39))
 			{
 				convert = digit - (5 * 6.37);
-				conv = ceil(convert);
+				conv = (int)ceil(convert);
 				digit = (5*10) + conv;
 				printf("%c",digit);
 			}
