@@ -22,7 +22,7 @@ int isPrime(int n)
 void mapit(int digit,FILE *fp2)
 {
 	if((digit>57)&&(digit<63))
-	{	printf("inside in %c",digit);
+	{	
 		convert = digit - (6*8.85);
 		conv = ceil(convert);
 		digit = (6*10) + conv;
