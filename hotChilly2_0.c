@@ -1,28 +1,11 @@
 #include<stdio.h>
-#include <termios.h>
-char getch() {
-    char buf = 0;
-    struct termios old = { 0 };
-    fflush(stdout);
-    if (tcgetattr(0, &old) < 0) perror("tcsetattr()");
-    old.c_lflag    &= ~ICANON;   // local modes = Non Canonical mode
-    old.c_lflag    &= ~ECHO;     // local modes = Disable echo. 
-    old.c_cc[VMIN]  = 1;         // control chars (MIN value) = 1
-    old.c_cc[VTIME] = 0;         // control chars (TIME value) = 0 (No time)
-    if (tcsetattr(0, TCSANOW, &old) < 0) perror("tcsetattr ICANON");
-    if (read(0, &buf, 1) < 0) perror("read()");
-    old.c_lflag    |= ICANON;    // local modes = Canonical mode
-    old.c_lflag    |= ECHO;      // local modes = Enable echo. 
-    if (tcsetattr(0, TCSADRAIN, &old) < 0) perror ("tcsetattr ~ICANON");
-    return buf;
- }
 int takein()
 {
-       	char ch;int a;
+       	int a;
    	while(1)
 	    {
-		 ch = getch();
-		 a = ch- '0';
+		printf("\n               \t\t\t");
+		 scanf("%d",&a);
 		 if(a != 1 &&a != 2 &&a != 3)
 		      {
 			 printf("You can enter either 1 or 2 or maximum 3\n");
@@ -32,6 +15,7 @@ int takein()
 			 return a;
 			}	
 }
+
 void main()
 {
 	int chocolate,i,n=1,first,multi,number,l1,l2;
@@ -51,13 +35,14 @@ void main()
 		for(i=0;i<n-1;i++)
 		{
 			chocolate = chocolate - first;// remaining number of chocolates is updated
-			printf("%d",first);
-			printf("\t\t\n");
+			printf("    %d",first);
+			//printf("\t\t\n");
+			printf("\n        \t\t\t");
 			number = takein();
 			chocolate = chocolate - number;// remaining chocolates
 			first = 4 - number; //assign 'first' with the number of chocolates the computer has to take
 		}
-		  printf("%d",first);
+		  printf("    %d",first);
 	}
 	
 	else
@@ -68,15 +53,18 @@ void main()
 		for(i=0;i<n;i++)
 			{
 				
+				//number = takein();
+				printf("\n \t\t\t\t");
 				number = takein();
+					
 				chocolate = chocolate - number;
-				printf("\t\t\t\t%d",number);
-				printf("\t\t\n");	
+				//printf("\t\t\t\t%d",number);
+				//printf("\t\t\n");	
 				first = 4 - number;
 				chocolate = chocolate -first;
-				printf("%d\n",first);
+				printf("    %d\n",first);
 			}
 	}
-		printf("\nHAHA you lose\n Eat the chilly \n Peace Out!!!!!!!!!\n");
+		printf("\n HAHA you lose\n Eat the chilly \n Peace Out!!!!!!!!!\n");
 }
 
