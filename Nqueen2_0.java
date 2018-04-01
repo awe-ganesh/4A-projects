@@ -1,7 +1,7 @@
 import java.util.*;
 import java.lang.*;
 import java.util.Stack;
-public class Nqueen{
+public class Nqueen2_0{
 	static int[][] qu = new int[50][50];
 	static Scanner input=new Scanner(System.in);
 	static int n;
@@ -22,7 +22,7 @@ public class Nqueen{
 			}
 			input.nextLine();
 		  }while(continueInput);
-	     	printf("\tthe chess board is represented as matrix\n\t where position is a '0'(zero)\n\tand the queens are placed as '1'(one)s\n\t");
+	     	System.out.print("\tthe chess board is represented as matrix\n\t where each box of the board is a '0'(zero)\n\tand the queens are placed as '1'(one)s\n\t");
 		nqueen(); //function call
 		for(int i=0;i<n;i++){for(int j=0;j<n;j++){ System.out.print(qu[i][j]+" ");} //printing output matrix
 				System.out.print("\n\t");}
