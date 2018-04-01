@@ -12,7 +12,7 @@ public class Nqueen{
 	     {
 		boolean continueInput= true;
 		do{
-			try{System.out.println("enter n value");
+			try{System.out.println("enter n value"); //taking 'n' as input
 			n = input.nextInt();
 			continueInput =false;
 			}
@@ -22,10 +22,10 @@ public class Nqueen{
 			}
 			input.nextLine();
 		  }while(continueInput);
-	     
-		nqueen();
-		for(int i=0;i<n;i++){for(int j=0;j<n;j++){ System.out.print(qu[i][j]+" ");}
-				System.out.print("\n");}
+	     	printf("\tthe chess board is represented as matrix\n\t where position is a '0'(zero)\n\tand the queens are placed as '1'(one)s\n\t");
+		nqueen(); //function call
+		for(int i=0;i<n;i++){for(int j=0;j<n;j++){ System.out.print(qu[i][j]+" ");} //printing output matrix
+				System.out.print("\n\t");}
 	     }
 	public static void nqueen(){
 
@@ -52,7 +52,7 @@ public class Nqueen{
 		  }
 		return ;		
 	     }
-	public static void replace(int r,int c)
+	public static void replace(int r,int c) //recursive function for backtracking
              {
 		qu[r][c]=0;
 		int flag=0;
@@ -66,7 +66,7 @@ public class Nqueen{
 		    if(flag==0) replace(--row,s.pop());
 		return;
              }
-	public static boolean check(int r,int c)
+	public static boolean check(int r,int c)  //function to findout the position is feasible 
 	     {
 		int i=0,j=r,k=c,l=c;
 		for(i=0;i<n;i++){    if(qu[r][i]==1||qu[i][c]==1){ return false; }
